@@ -8,6 +8,7 @@ import Standings from './Standings'
 function App() {
   const [selectedWeek, setSelectedWeek] = useState(1)
   const [selectedWeeksGames, setSelectedWeekGames] = useState([])
+  const [teamData, setTeamData] = useState([])
 
   function handleWeek(e){
     setSelectedWeek(e.target.value)
@@ -18,13 +19,20 @@ function App() {
     .then(r=>r.json())
     .then((r)=>setSelectedWeekGames(r.nflSchedule.matchup))
   }, [selectedWeek])
+
+  useEffect(()=> {
+    fetch("http://localhost:3000/teams")
+    .then(r=>r.json())
+    .then((r)=>setTeamData(r))
+  }, [])
   
 
   return (
     <div>
+      
     <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} />
-    <Standings />
+    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData} setTeamData={setTeamData}/>
+    <Standings teamData={teamData}/>
     </div>
   );
 }

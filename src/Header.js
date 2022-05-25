@@ -5,8 +5,8 @@ function Header({handleWeek, selectedWeek}){
     
     return(
         <div>
-            <h1 class="text_center">Pick Week {selectedWeek}'s Games</h1>
-            <h3 class="text_center">Or Choose a week</h3>
+            <h1 className="text_center">Pick Week {selectedWeek}'s Games</h1>
+            <h3 className="text_center">Or Choose a week</h3>
             <label >
         <select onChange={e=> handleWeek(e)}>
           <option value="1" >Week 1</option>
