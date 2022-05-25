@@ -15,8 +15,10 @@
                     "slug": "nfl",
                     "teams": [
                         {
-                            "team": {
+                            "ARI": {
                                 "id": "22",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:22",
                                 "slug": "arizona-cardinals",
                                 "abbreviation": "ARI",
@@ -27,6 +29,7 @@
                                 "location": "Arizona",
                                 "color": "A40227",
                                 "alternateColor": "000000",
+                                
                                 "isActive": true,
                                 "isAllStar": false,
                                 "logos": [
@@ -154,8 +157,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "ATL": {
                                 "id": "1",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:1",
                                 "slug": "atlanta-falcons",
                                 "abbreviation": "ATL",
@@ -293,8 +298,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "BAL": {
                                 "id": "33",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:33",
                                 "slug": "baltimore-ravens",
                                 "abbreviation": "BAL",
@@ -432,8 +439,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "BUF": {
                                 "id": "2",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:2",
                                 "slug": "buffalo-bills",
                                 "abbreviation": "BUF",
@@ -571,8 +580,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "CAR": {
                                 "id": "29",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:29",
                                 "slug": "carolina-panthers",
                                 "abbreviation": "CAR",
@@ -710,8 +721,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "CHI": {
                                 "id": "3",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:3",
                                 "slug": "chicago-bears",
                                 "abbreviation": "CHI",
@@ -849,8 +862,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "CIN": {
                                 "id": "4",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:4",
                                 "slug": "cincinnati-bengals",
                                 "abbreviation": "CIN",
@@ -988,8 +1003,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "CLE": {
                                 "id": "5",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:5",
                                 "slug": "cleveland-browns",
                                 "abbreviation": "CLE",
@@ -1127,8 +1144,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "DAL": {
                                 "id": "6",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:6",
                                 "slug": "dallas-cowboys",
                                 "abbreviation": "DAL",
@@ -1266,8 +1285,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "DEN": {
                                 "id": "7",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:7",
                                 "slug": "denver-broncos",
                                 "abbreviation": "DEN",
@@ -1405,8 +1426,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "DET": {
                                 "id": "8",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:8",
                                 "slug": "detroit-lions",
                                 "abbreviation": "DET",
@@ -1544,8 +1567,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "GBP": {
                                 "id": "9",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:9",
                                 "slug": "green-bay-packers",
                                 "abbreviation": "GBP",
@@ -1683,8 +1708,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "HOU": {
                                 "id": "34",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:34",
                                 "slug": "houston-texans",
                                 "abbreviation": "HOU",
@@ -1822,8 +1849,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "IND": {
                                 "id": "11",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:11",
                                 "slug": "indianapolis-colts",
                                 "abbreviation": "IND",
@@ -1961,8 +1990,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "JAC": {
                                 "id": "30",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:30",
                                 "slug": "jacksonville-jaguars",
                                 "abbreviation": "JAC",
@@ -2100,8 +2131,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "KCC": {
                                 "id": "12",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:12",
                                 "slug": "kansas-city-chiefs",
                                 "abbreviation": "KCC",
@@ -2239,8 +2272,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "LVR": {
                                 "id": "13",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:13",
                                 "slug": "las-vegas-raiders",
                                 "abbreviation": "LVR",
@@ -2378,8 +2413,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "LAC": {
                                 "id": "24",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:24",
                                 "slug": "los-angeles-chargers",
                                 "abbreviation": "LAC",
@@ -2517,8 +2554,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "LAR": {
                                 "id": "14",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:14",
                                 "slug": "los-angeles-rams",
                                 "abbreviation": "LAR",
@@ -2656,8 +2695,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "MIA": {
                                 "id": "15",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:15",
                                 "slug": "miami-dolphins",
                                 "abbreviation": "MIA",
@@ -2795,8 +2836,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "MIN": {
                                 "id": "16",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:16",
                                 "slug": "minnesota-vikings",
                                 "abbreviation": "MIN",
@@ -2934,8 +2977,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "NEP": {
                                 "id": "17",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:17",
                                 "slug": "new-england-patriots",
                                 "abbreviation": "NEP",
@@ -3073,8 +3118,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "NOS": {
                                 "id": "18",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:18",
                                 "slug": "new-orleans-saints",
                                 "abbreviation": "NOS",
@@ -3212,8 +3259,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "NYG": {
                                 "id": "19",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:19",
                                 "slug": "new-york-giants",
                                 "abbreviation": "NYG",
@@ -3351,8 +3400,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "NYJ": {
                                 "id": "20",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:20",
                                 "slug": "new-york-jets",
                                 "abbreviation": "NYJ",
@@ -3490,8 +3541,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "PHI": {
                                 "id": "21",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:21",
                                 "slug": "philadelphia-eagles",
                                 "abbreviation": "PHI",
@@ -3629,8 +3682,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "PIT": {
                                 "id": "23",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:23",
                                 "slug": "pittsburgh-steelers",
                                 "abbreviation": "PIT",
@@ -3768,8 +3823,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "SFO": {
                                 "id": "25",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:25",
                                 "slug": "san-francisco-49ers",
                                 "abbreviation": "SFO",
@@ -3907,8 +3964,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "SEA": {
                                 "id": "26",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:26",
                                 "slug": "seattle-seahawks",
                                 "abbreviation": "SEA",
@@ -4046,8 +4105,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "TBB": {
                                 "id": "27",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:27",
                                 "slug": "tampa-bay-buccaneers",
                                 "abbreviation": "TBB",
@@ -4185,8 +4246,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "TEN": {
                                 "id": "10",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:10",
                                 "slug": "tennessee-titans",
                                 "abbreviation": "TEN",
@@ -4324,8 +4387,10 @@
                             }
                         },
                         {
-                            "team": {
+                            "WAS": {
                                 "id": "28",
+                                "wins":0,
+                                "losses":0,
                                 "uid": "s:20~l:28~t:28",
                                 "slug": "washington-commanders",
                                 "abbreviation": "WAS",
