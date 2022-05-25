@@ -1,18 +1,5 @@
 {
-    "sports": [
-        {
-            "id": "20",
-            "uid": "s:20",
-            "name": "Football",
-            "slug": "football",
-            "leagues": [
-                {
-                    "id": "28",
-                    "uid": "s:20~l:28",
-                    "name": "National Football League",
-                    "abbreviation": "NFL",
-                    "shortName": "NFL",
-                    "slug": "nfl",
+    
                     "teams": [
                         {
                             "ARI": {
@@ -4529,7 +4516,4 @@
                         }
                     ]
                 }
-            ]
-        }
-    ]
-}
+            
