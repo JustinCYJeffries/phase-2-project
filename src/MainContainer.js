@@ -8,12 +8,15 @@ function MainContainer() {
   const [selectedWeek, setSelectedWeek] = useState(1)
   const [selectedWeeksGames, setSelectedWeekGames] = useState([])
   const [teamData, setTeamData] = useState([])
+  const [winTeam, setWinTeam] = useState([])
+  const [loseTeam, setLoseTeam] = useState([])
+ 
   
   const fetchWeekData = () => {
     fetch(`https://api.myfantasyleague.com/fflnetdynamic2022/nfl_sched_${selectedWeek}.json`)
     .then(r=>r.json())
     .then((r)=>{
-        console.log(r)
+        
         setSelectedWeekGames(r.nflSchedule.matchup)})
       
       .catch((error) => {
@@ -27,7 +30,8 @@ function MainContainer() {
     .then(r=>r.json())
     .then((r)=>{
         setTeamData(r)
-        console.log(r)
+     
+        
     })
       
       .catch((error) => {
@@ -36,9 +40,19 @@ function MainContainer() {
       });
   };
 
+ function handleClick(e){
+    console.log(e.target.attributes.winner.value)
+    console.log(e.target.attributes.loser.value)
+     
+    
+  }
+  
+
   function handleWeek(e){
     setSelectedWeek(e.target.value)
 }
+
+
   
   useEffect(()=> {
     fetchWeekData()
@@ -55,7 +69,7 @@ function MainContainer() {
     <div>
       
     <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData} setTeamData={setTeamData}/>
+    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick}/>
     <Standings teamData={teamData}/>
     </div>
   );
