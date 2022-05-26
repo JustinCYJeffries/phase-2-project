@@ -12,7 +12,9 @@ function MainContainer() {
   const fetchWeekData = () => {
     fetch(`https://api.myfantasyleague.com/fflnetdynamic2022/nfl_sched_${selectedWeek}.json`)
     .then(r=>r.json())
-    .then((r)=>setSelectedWeekGames(r.nflSchedule.matchup))
+    .then((r)=>{
+        console.log(r)
+        setSelectedWeekGames(r.nflSchedule.matchup)})
       
       .catch((error) => {
         console.log(error);
@@ -40,6 +42,7 @@ function MainContainer() {
   
   useEffect(()=> {
     fetchWeekData()
+    
   }, [selectedWeek])
 
  
