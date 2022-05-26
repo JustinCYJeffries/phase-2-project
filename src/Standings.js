@@ -2,15 +2,166 @@ import React from "react"
 
 function Standings({teamData}){
     
-    
-    //const NFC = [...teamData[0]]+[...teamData[1]]+[teamData[4]]+[teamData[5]]+[teamData[8]]+[teamData[10]+teamData[11]+teamData[18]+teamData[20]+teamData[22]+teamData[23]+teamData[25]+teamData[27]+teamData[28]+teamData[29]+teamData[31]]
-    //const AFC = [teamData[2]+teamData[3]+teamData[6]+teamData[7]+teamData[9]+teamData[12]+teamData[13]+teamData[14]+teamData[15]+teamData[16]+teamData[17]+teamData[19]+teamData[21]+teamData[24]+teamData[26]+teamData[30]]
-
+    const afcFilter = teamData.map(team=>{
+        if(team.team.conference == "AFC")
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    })
+    const nfcFilter = teamData.map(team=>{
+        if(team.team.conference == "NFC")
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    })
+    const afcNorthFilter = teamData.map(team=>{
+        if(team.team.conference == "AFC"){
+            if(team.team.division =="north")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const afcSouthFilter = teamData.map(team=>{
+        if(team.team.conference == "AFC"){
+            if(team.team.division =="south")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const afcEastFilter = teamData.map(team=>{
+        if(team.team.conference == "AFC"){
+            if(team.team.division =="east")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const afcWestFilter = teamData.map(team=>{
+        if(team.team.conference == "AFC"){
+            if(team.team.division =="west")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const nfcNorthFilter = teamData.map(team=>{
+        if(team.team.conference == "NFC"){
+            if(team.team.division =="north")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const nfcSouthFilter = teamData.map(team=>{
+        if(team.team.conference == "NFC"){
+            if(team.team.division =="south")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const nfcEastFilter = teamData.map(team=>{
+        if(team.team.conference == "NFC"){
+            if(team.team.division =="east")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
+    const nfcWestFilter = teamData.map(team=>{
+        if(team.team.conference == "NFC"){
+            if(team.team.division =="west")
+        
+        return(
+            <div key={team.team.shortDisplayName}>
+            <span>{team.team.shortDisplayName}</span>
+            <span>{team.team.wins}</span>
+            <span>{team.team.losses}</span>
+            </div>
+        )  
+    }})
 
 
     return(
         <div>
-            {}
+            <div>
+            <h3>AFC Playoffs</h3>
+            {afcFilter}
+            </div>
+            <div>
+            <h3>NFC Playoffs</h3>
+            {nfcFilter}
+            </div>
+            <div>
+                <h3>AFC North</h3>
+                {afcNorthFilter}
+            </div>
+            <div>
+                <h3>AFC South</h3>
+                {afcSouthFilter}
+            </div>
+            <div>
+                <h3>AFC East</h3>
+                {afcEastFilter}
+            </div>
+            <div>
+                <h3>AFC West</h3>
+                {afcWestFilter}
+            </div>
+            <div>
+                <h3>NFC North</h3>
+                {nfcNorthFilter}
+            </div>
+            <div>
+                <h3>NFC South</h3>
+                {nfcSouthFilter}
+            </div>
+            <div>
+                <h3>NFC East</h3>
+                {nfcEastFilter}
+            </div>
+            <div>
+                <h3>NFC West</h3>
+                {nfcWestFilter}
+            </div>
         </div>
     )
 }
