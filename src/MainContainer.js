@@ -40,12 +40,29 @@ function MainContainer() {
       });
   };
 
- function handleClick(e){
-    console.log(e.target.attributes.winner.value)
-    console.log(e.target.attributes.loser.value)
-     
+ function handleClickz(e){
+    setWinTeam()
+    setLoseTeam(e.target.attributes.loser.value)
+   
+ }
     
-  }
+    const handleClick = (e) =>{
+        const winningTeam = teamData.map(element =>{
+            if(element.team.abbreviation == e.target.attributes.winner.value){
+               element.team.wins++
+
+            return ({ ...element})
+            //return console.log("winner"+ element.team.wins)
+            }
+            return (element)
+    })
+        console.log(winningTeam)
+    }
+
+       
+    
+    
+  
   
 
   function handleWeek(e){
