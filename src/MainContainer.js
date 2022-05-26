@@ -40,25 +40,41 @@ function MainContainer() {
       });
   };
 
- function handleClickz(e){
-    setWinTeam()
+ function handleClick(e){
+    setWinTeam(e.target.attributes.winner.value)
     setLoseTeam(e.target.attributes.loser.value)
-   
+    winnerWinner()
+    loserLoser()
  }
     
-    const handleClick = (e) =>{
+    const winnerWinner = () =>{
         const winningTeam = teamData.map(element =>{
-            if(element.team.abbreviation == e.target.attributes.winner.value){
+            if(element.team.abbreviation == winTeam){
                element.team.wins++
 
             return ({ ...element})
             //return console.log("winner"+ element.team.wins)
             }
+            
+
             return (element)
     })
-        console.log(winningTeam)
+        setTeamData(winningTeam)
     }
+    const loserLoser = () =>{
+        const loserTeam = teamData.map(element =>{
+            if(element.team.abbreviation == loseTeam){
+               element.team.losses++
 
+            return ({ ...element})
+            //return console.log("winner"+ element.team.wins)
+            }
+            
+
+            return (element)
+    })
+        setTeamData(loserTeam)
+    }
        
     
     
