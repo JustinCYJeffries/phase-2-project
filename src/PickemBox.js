@@ -1,4 +1,5 @@
 import React from "react"
+import Buttons from "./Buttons"
 
 function PickemBox({teams, teamData, setTeamData}){
 
@@ -31,8 +32,7 @@ function PickemBox({teams, teamData, setTeamData}){
     return(
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
-            <button>{awayElement.shortDisplayName} Win</button>
-            <button>{homeElement.shortDisplayName} Win</button>
+            <Buttons awayElement={awayElement} homeElement={homeElement} />
         </div>
     )
 }
