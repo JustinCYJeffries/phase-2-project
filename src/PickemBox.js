@@ -1,7 +1,7 @@
 import React from "react"
 import Buttons from "./Buttons"
 
-function PickemBox({teams, teamData, handleClick}){
+function PickemBox({teams, teamData, handleClick, winTeam}){
 
     const homeTeam=teams[1].id
     const awayTeam = teams[0].id
@@ -32,7 +32,7 @@ function PickemBox({teams, teamData, handleClick}){
     return(
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
-            <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick}/>
+            <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam}/>
         </div>
     )
 }

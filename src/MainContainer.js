@@ -8,7 +8,7 @@ function MainContainer() {
   const [selectedWeek, setSelectedWeek] = useState(1)
   const [selectedWeeksGames, setSelectedWeekGames] = useState([])
   const [teamData, setTeamData] = useState([])
-  const [winTeam, setWinTeam] = useState([])
+  const [winTeam, setWinTeam] = useState(" ")
   const [loseTeam, setLoseTeam] = useState([])
  
   
@@ -41,19 +41,17 @@ function MainContainer() {
   };
 
  function handleClick(e){
-    setWinTeam(e.target.attributes.winner.value)
-    setLoseTeam(e.target.attributes.loser.value)
-    winnerWinner()
-    loserLoser()
- }
+  let winTeam =  e.target.attributes.winner.value
+  let loser =  e.target.attributes.loser.value
     
     const winnerWinner = () =>{
-        const winningTeam = teamData.map(element =>{
+      
+      const winningTeam = teamData.map(element =>{
             if(element.team.abbreviation == winTeam){
                element.team.wins++
-
+                
             return ({ ...element})
-            //return console.log("winner"+ element.team.wins)
+           
             }
             
 
@@ -63,11 +61,11 @@ function MainContainer() {
     }
     const loserLoser = () =>{
         const loserTeam = teamData.map(element =>{
-            if(element.team.abbreviation == loseTeam){
+            if(element.team.abbreviation == loser){
                element.team.losses++
 
             return ({ ...element})
-            //return console.log("winner"+ element.team.wins)
+            
             }
             
 
@@ -75,8 +73,9 @@ function MainContainer() {
     })
         setTeamData(loserTeam)
     }
-       
-    
+       winnerWinner();
+       loserLoser()
+  }
     
   
   
@@ -102,7 +101,7 @@ function MainContainer() {
     <div>
       
     <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick}/>
+    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>
     <Standings teamData={teamData}/>
     </div>
   );
