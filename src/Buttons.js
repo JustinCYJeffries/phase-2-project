@@ -8,15 +8,26 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
   
   const [picked, setPicked] = useState(false)
   const [winName, setWinName] = useState("")
-  
+  const [pickedGames, setPickedGames] = useState([])
+
 
   function partyClick(e){
-   setPicked(true)
+    setPicked(true)
    handleClick(e)
    setWinName(e.target.attributes.winnamez.value)
-   pickedFilter(boxKey, )
+   function pickedFilter(){
+        let winner=e.target.attributes.winnamez.value
+    const pickedGame = 
+        [{boxKey}, {winner}]
+    
+    setPickedGames([pickedGame])
+    
+    
+ 
+}
+pickedFilter()
  }
-
+ console.log(pickedGames)
  
   function picking(){
     if(picked==false){
