@@ -1,12 +1,14 @@
 import React from "react"
-import Buttons from "./Buttons"
+import Buttons, {useState} from "./Buttons"
 
-function PickemBox({teams, teamData, handleClick, winTeam}){
+function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter}){
 
     const homeTeam=teams[1].id
     const awayTeam = teams[0].id
    let awayElement = [] 
    let homeElement = [] 
+   
+   
 
     
     const foundHomeTeam = teamData.map(element => {
@@ -32,7 +34,7 @@ function PickemBox({teams, teamData, handleClick, winTeam}){
     return(
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
-            <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam}/>
+            <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam} boxKey={boxKey} pickedFilter={pickedFilter}/>
         </div>
     )
 }

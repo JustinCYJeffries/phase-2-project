@@ -3,16 +3,18 @@ import React, {useState} from "react"
 
 
 
-function Buttons({homeElement, awayElement, teamData, handleClick, winTeam}) {
+function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, pickedFilter}) {
   
   
   const [picked, setPicked] = useState(false)
   const [winName, setWinName] = useState("")
+  
 
   function partyClick(e){
    setPicked(true)
    handleClick(e)
    setWinName(e.target.attributes.winnamez.value)
+   pickedFilter(boxKey, )
  }
 
  
