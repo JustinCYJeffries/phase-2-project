@@ -40,6 +40,11 @@ function MainContainer() {
       });
   };
 
+function validate(){
+  if(selectedWeeksGames != [])
+  return (<GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>)
+}
+
  function handleClick(e){
   let winTeam =  e.target.attributes.winner.value
   let loser =  e.target.attributes.loser.value
@@ -99,9 +104,9 @@ function MainContainer() {
 
   return (
     <div>
-      
+    
     <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>
+    {validate()}
     <Standings teamData={teamData}/>
     </div>
   );
