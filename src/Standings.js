@@ -9,174 +9,83 @@ import NFCN from "./NFCN"
 import NFCS from "./NFCS"
 import NFCE from "./NFCE"
 import NFCW from "./NFCW"
+import NFL from "./NFL"
 
-function Standings({teamData}){
-   
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Routes
+  } from "react-router-dom";
   
- const sortData= teamData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
-    const afcFilter = sortData.map(team=>{
-       
-        if(team.team.conference == "AFC")
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    })
-    const nfcFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC")
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    })
-    const afcNorthFilter = sortData.map(team=>{
-        if(team.team.conference == "AFC"){
-            if(team.team.division =="north")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const afcSouthFilter = sortData.map(team=>{
-        if(team.team.conference == "AFC"){
-            if(team.team.division =="south")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const afcEastFilter = sortData.map(team=>{
-        if(team.team.conference == "AFC"){
-            if(team.team.division =="east")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const afcWestFilter = sortData.map(team=>{
-        if(team.team.conference == "AFC"){
-            if(team.team.division =="west")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const nfcNorthFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC"){
-            if(team.team.division =="north")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const nfcSouthFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC"){
-            if(team.team.division =="south")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const nfcEastFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC"){
-            if(team.team.division =="east")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-    const nfcWestFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC"){
-            if(team.team.division =="west")
-        
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    }})
-
-
-    return(
+   function Standings({teamData}) {
+    return (
+      <Router>
         <div>
-            <div>
-            <h3>AFC Playoffs</h3>
-            {afcFilter}
-            </div>
-            <div>
-            <h3>NFC Playoffs</h3>
-            {nfcFilter}
-            </div>
-            <div>
-                <h3>AFC North</h3>
-                {afcNorthFilter}
-            </div>
-            <div>
-                <h3>AFC South</h3>
-                {afcSouthFilter}
-            </div>
-            <div>
-                <h3>AFC East</h3>
-                {afcEastFilter}
-            </div>
-            <div>
-                <h3>AFC West</h3>
-                {afcWestFilter}
-            </div>
-            <div>
-                <h3>NFC North</h3>
-                {nfcNorthFilter}
-            </div>
-            <div>
-                <h3>NFC South</h3>
-                {nfcSouthFilter}
-            </div>
-            <div>
-                <h3>NFC East</h3>
-                {nfcEastFilter}
-            </div>
-            <div>
-                <h3>NFC West</h3>
-                {nfcWestFilter}
-            </div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">NFL</Link>
+              </li>
+              <li>
+                <Link to="/AFC">AFC</Link>
+                <ul>
+                    <li>
+                    <Link to="/AFCN">AFC North</Link>
+                    </li>
+                    <li>
+                    <Link to="/AFCS">AFC South</Link>
+                    </li>
+                    <li>
+                    <Link to="/AFCE">AFC East</Link>
+                    </li>
+                    <li>
+                    <Link to="/AFCN">AFC West</Link>
+                    </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/NFC">NFC</Link>
+                <ul>
+                    <li>
+                    <Link to="/NFCN">NFC North</Link>
+                    </li>
+                    <li>
+                    <Link to="/NFCS">NFC South</Link>
+                    </li>
+                    <li>
+                    <Link to="/NFCE">NFC East</Link>
+                    </li>
+                    <li>
+                    <Link to="/NFCN">NFC West</Link>
+                    </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+  
+         
+          <Routes>
+            <Route path="/AFC" element={<AFC teamData={teamData}/>} />
+            <Route path="/AFCN" element={<AFCN teamData={teamData}/>} />
+            <Route path="/AFCS" element={<AFCS teamData={teamData}/>} />
+            <Route path="/AFCE" element={<AFCE teamData={teamData}/>} />
+            <Route path="/AFCW" element={<AFCW teamData={teamData}/>} />
+            
+            <Route path="/NFC" element={<NFC teamData={teamData}/>} />
+            <Route path="/NFCN" element={<NFCN teamData={teamData}/>} />
+            <Route path="/NFCS" element={<NFCS teamData={teamData}/>} />
+            <Route path="/NFCE" element={<NFCE teamData={teamData}/>} />
+            <Route path="/NFCW" element={<NFCW teamData={teamData}/>} />
+            
+            <Route path="/" element={<NFL teamData={teamData}/>} />
+              
+            
+          </Routes>
         </div>
-    )
-}
+      </Router>
+    );
+  }
+  
 
-export default Standings
+  export default Standings
