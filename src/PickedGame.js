@@ -1,7 +1,7 @@
 import React from "react"
-import Buttons from "./Buttons"
 
-function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter, handleFilter, selectedWeek}){
+
+function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleFilter, selectedWeek}){
 
     const homeTeam=teams[1].id
     const awayTeam = teams[0].id
@@ -34,9 +34,11 @@ function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter,
     return(
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
-            <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam} boxKey={boxKey} pickedFilter={pickedFilter} handleFilter={handleFilter} selectedWeek={selectedWeek}/>
+            <div>
+      <h3>{} WIN!!</h3>
+    </div>
         </div>
     )
 }
 
-export default PickemBox
+export default PickedGame
