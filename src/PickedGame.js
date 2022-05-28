@@ -8,7 +8,7 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
    let awayElement = [] 
    let homeElement = [] 
    
-   console.log(teams)
+
 
     
     const foundHomeTeam = teamData.map(element => {
@@ -42,7 +42,7 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
     })
 
 
-console.log(winTeam)
+
     return(
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>

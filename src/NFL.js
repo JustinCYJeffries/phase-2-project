@@ -1,6 +1,6 @@
 import React from "react"
 
-function Standings({teamData}){
+function NFL({teamData}){
    
   
  const sortData= teamData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
@@ -169,4 +169,4 @@ function Standings({teamData}){
     )
 }
 
-export default Standings
+export default NFL

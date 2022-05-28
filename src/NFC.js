@@ -1,6 +1,6 @@
 import React from "react"
 
-function Standings({teamData}){
+function NFC({teamData}){
    
   
  const sortData= teamData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
@@ -125,26 +125,12 @@ function Standings({teamData}){
 
     return(
         <div>
-            <div>
-            <h3>AFC Playoffs</h3>
-            {afcFilter}
-            </div>
+           
             <div>
             <h3>NFC Playoffs</h3>
             {nfcFilter}
             </div>
-            <div>
-                <h3>AFC North</h3>
-                {afcNorthFilter}
-            </div>
-            <div>
-                <h3>AFC South</h3>
-                {afcSouthFilter}
-            </div>
-            <div>
-                <h3>AFC East</h3>
-                {afcEastFilter}
-            </div>
+          
             <div>
                 <h3>AFC West</h3>
                 {afcWestFilter}
@@ -169,4 +155,4 @@ function Standings({teamData}){
     )
 }
 
-export default Standings
+export default NFC

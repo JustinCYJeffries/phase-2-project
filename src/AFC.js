@@ -1,6 +1,6 @@
 import React from "react"
 
-function Standings({teamData}){
+function AFC({teamData}){
    
   
  const sortData= teamData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
@@ -15,16 +15,7 @@ function Standings({teamData}){
             </div>
         )  
     })
-    const nfcFilter = sortData.map(team=>{
-        if(team.team.conference == "NFC")
-        return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
-            </div>
-        )  
-    })
+    
     const afcNorthFilter = sortData.map(team=>{
         if(team.team.conference == "AFC"){
             if(team.team.division =="north")
@@ -130,10 +121,6 @@ function Standings({teamData}){
             {afcFilter}
             </div>
             <div>
-            <h3>NFC Playoffs</h3>
-            {nfcFilter}
-            </div>
-            <div>
                 <h3>AFC North</h3>
                 {afcNorthFilter}
             </div>
@@ -149,24 +136,9 @@ function Standings({teamData}){
                 <h3>AFC West</h3>
                 {afcWestFilter}
             </div>
-            <div>
-                <h3>NFC North</h3>
-                {nfcNorthFilter}
-            </div>
-            <div>
-                <h3>NFC South</h3>
-                {nfcSouthFilter}
-            </div>
-            <div>
-                <h3>NFC East</h3>
-                {nfcEastFilter}
-            </div>
-            <div>
-                <h3>NFC West</h3>
-                {nfcWestFilter}
-            </div>
+           
         </div>
     )
 }
 
-export default Standings
+export default AFC
