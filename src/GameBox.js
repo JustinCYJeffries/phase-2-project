@@ -4,12 +4,15 @@ import PickemBox from "./PickemBox"
 
 function Gamebox({selectedWeeksGames, selectedWeek, teamData, handleClick, winTeam }){
     const [pickedGames, setPickedGames] = useState([]) 
-    const [pickedWeeks, setPickedWeeks] = useState() 
+    const [winArray, setWinArray] = useState() 
     const [generatePickedGames, setGeneratePickedGames]= useState([])
     const [unPickedGames, setUnPickedGames]= useState(selectedWeeksGames)
     
     let updatedGameArry =[]
-   function handleFilter(a){
+    let winnerArray = []
+   
+   
+    function handleFilter(a){
  
     let wintotal=pickedGames.concat({a}) 
         setPickedGames(wintotal)
@@ -23,13 +26,16 @@ function Gamebox({selectedWeeksGames, selectedWeek, teamData, handleClick, winTe
     pickedGames.forEach(e=>{
           let boxKey = e.a[1].boxKey
           let week = e.a[2].selectedWeek
+          let winner = e.a[0].winner
           
           if (week==selectedWeek){
-               updatedGameArry.push(boxKey)}
+               updatedGameArry.push(boxKey)
+                winnerArray.push(winner)
+            }
                 }
     )
     
-    console.log(pickedGames)
+   setWinArray(winnerArray)
     setGeneratePickedGames(updatedGameArry.map((item) => selectedWeeksGames[item]))
     
     setUnPickedGames(selectedWeeksGames.filter((d, i) => updatedGameArry.indexOf(i) == -1))
@@ -38,11 +44,11 @@ function Gamebox({selectedWeeksGames, selectedWeek, teamData, handleClick, winTe
   
  
 function pickem(){
-   console.log(generatePickedGames)
+  
     return(
 <div className="text_center">
             {unPickedGames.map(game=> <PickemBox key={`${selectedWeek}`+`${game.team[0].id}`+`${game.team[1].id}`} boxKey={selectedWeeksGames.indexOf(game)} teams={game.team} teamData={teamData} handleClick={handleClick} winTeam={winTeam} handleFilter={handleFilter} selectedWeek={selectedWeek}/>)}
-            {generatePickedGames.map(game=> <PickedGame key={`${selectedWeek}`+`${game.team[0].id}`+`${game.team[1].id}`} boxKey={selectedWeeksGames.indexOf(game)} teams={game.team} teamData={teamData} handleClick={handleClick} winTeam={winTeam} handleFilter={handleFilter} selectedWeek={selectedWeek}/>)}          
+            {generatePickedGames.map(game=> <PickedGame key={`${selectedWeek}`+`${game.team[0].id}`+`${game.team[1].id}`} boxKey={selectedWeeksGames.indexOf(game)} teams={game.team} teamData={teamData} handleClick={handleClick} winTeam={winArray} handleFilter={handleFilter} selectedWeek={selectedWeek}/>)}          
         </div>
     )
 
