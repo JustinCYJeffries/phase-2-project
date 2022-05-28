@@ -23,7 +23,7 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
     setPicked(true)
    handleClick(e)
    setWinName(e.target.attributes.winnamez.value)
-   const winner= e.target.attributes.winnamez.value
+   const winner= e.target.attributes.winner.value
    escalator++
    const pickedkey = [{boxKey}]
    const pickedWeek = [{selectedWeek}]

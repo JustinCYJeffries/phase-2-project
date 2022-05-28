@@ -8,7 +8,7 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
    let awayElement = [] 
    let homeElement = [] 
    
-   
+   console.log(teams)
 
     
     const foundHomeTeam = teamData.map(element => {
@@ -28,6 +28,18 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
         )}
     });
     
+    const foundwinteam = winTeam.map(winner =>{
+      
+        if(winner == homeTeam){
+        return(homeElement.displayName)}
+            
+           
+            if (winner==awayTeam){
+            return (awayElement.displayName)}
+               
+        
+       
+    })
 
 
 console.log(winTeam)
@@ -35,7 +47,7 @@ console.log(winTeam)
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
             <div>
-      <h3>{} WIN!!</h3>
+      <h3>{foundwinteam} WIN!!</h3>
     </div>
         </div>
     )
