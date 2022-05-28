@@ -1,4 +1,14 @@
 import React from "react"
+import AFC from "./AFC"
+import AFCN from "./AFCN"
+import AFCS from "./AFCS"
+import AFCE from "./AFCE"
+import AFCW from "./AFCW"
+import NFC from "./NFC"
+import NFCN from "./NFCN"
+import NFCS from "./NFCS"
+import NFCE from "./NFCE"
+import NFCW from "./NFCW"
 
 function Standings({teamData}){
    
