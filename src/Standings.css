@@ -1,0 +1,71 @@
+
+ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  background: #4758f5;
+  justify-content: center;
+  display: flex
+  
+}
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+  background: #4758f5;
+  text-align: center;
+}
+/* This hides the dropdowns */
+li ul {
+  display: none;
+}
+ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  text-align: center;
+}
+ul li a:hover {
+  background: #2c3e50;
+}
+/* Display the dropdown */
+li:hover > ul {
+  display: block; 
+  position: absolute;
+}
+/* Remove float from dropdown lists */
+li:hover li {
+    float: none;
+}
+li:hover a {
+  background: #4758f5;
+}
+li:hover li a:hover {
+  background: #2c3e50;
+}
+.main-navigation li ul li {
+  border-top: 0;
+  text-align: center;
+}
+/* Displays second level dropdowns to the right of the first level dropdown */
+ul ul ul {
+  left: 100%;
+  top: 0; 
+}
+
+
+/* Simple clearfix */
+
+ul:before,
+ul:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+ul:after {
+    clear: both;
+}
+
+/*Author: Doane Hopkins https://www.sliderrevolution.com/resources/css-dropdown-menu/ */

@@ -10,6 +10,7 @@ import NFCS from "./NFCS"
 import NFCE from "./NFCE"
 import NFCW from "./NFCW"
 import NFL from "./NFL"
+import "./Standings.css"
 
 import {
     BrowserRouter as Router,
@@ -17,13 +18,14 @@ import {
     Link,
     Routes
   } from "react-router-dom";
-  
+
    function Standings({teamData}) {
     return (
       <Router>
         <div>
+            <div>
           <nav>
-            <ul>
+            <ul className="main-navigation ">
               <li>
                 <Link to="/">NFL</Link>
               </li>
@@ -63,6 +65,8 @@ import {
               </li>
             </ul>
           </nav>
+        
+          </div>
   
          
           <Routes>
