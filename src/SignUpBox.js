@@ -3,7 +3,7 @@ import GameBox from "./GameBox";
 import Header from "./Header";
 
 
-function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleClick, winTeam, handlePickedData, userList, handleWeek}){
+function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleClick, handlePickedData, userList, handleWeek}){
     const [formData, setFormData] = useState({
         name: "",
         picks:[] 
@@ -63,7 +63,7 @@ function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleC
               <br/><br/><br/>
         </div>)}
         else return(<div><Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-          <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam} handlePickedData={handlePickedData}/>
+          <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} handlePickedData={handlePickedData}/>
         </div>)
       }
 

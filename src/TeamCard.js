@@ -1,7 +1,7 @@
 import React from "react"
 
 function TeamCard({team}){
-    console.log(team)
+
     function validator(){
         const openInNewTab = (url) =>{
             const newWindow=window.open(url, "_blank", "noopener, noreferrer")

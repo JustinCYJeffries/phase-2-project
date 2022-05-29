@@ -8,9 +8,9 @@ function MainContainer() {
   const [selectedWeeksGames, setSelectedWeekGames] = useState([])
   const [teamData, setTeamData] = useState([])
   
-
+ 
   const [userList, setUserList] = useState([])
-  
+ 
   
   
   
@@ -41,11 +41,12 @@ function MainContainer() {
         
       });
   };
-
+// eslint-disable-next-line
 function handlePickedData(pickedData){
   const dataIndex=userList.length
+  
   const pickey = userList.map(user=>{
-    
+   
     
     if (dataIndex=== user.id){  
       user.picks = pickedData
@@ -78,7 +79,7 @@ function handlePickedData(pickedData){
 
   function handleAddUser(newUser){
    
-  
+   
    setUserList(userList.concat(newUser))
 
   }
@@ -140,7 +141,7 @@ function handlePickedData(pickedData){
   
   useEffect(()=> {
     fetchWeekData()
-    
+    // eslint-disable-next-line
   }, [selectedWeek])
 
  

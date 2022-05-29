@@ -2,6 +2,8 @@ import React from "react"
 
 
 function UserTable({picks}){
+    
+   
     const presortData= picks.sort((z,y) =>(Object.values(z.a[2])[0] > Object.values(y.a[2])[0]) ? 1: -1)
   const games =  presortData.map(pick=>{
         let hometeam= Object.values(pick.a[3])[0]
