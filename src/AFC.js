@@ -8,7 +8,7 @@ function AFC({teamData}){
  
  const afcFilter = sortData.map(team=>{
        
-    if(team.team.conference == "AFC")
+    if(team.team.conference === "AFC")
     return(
         <div className="standingbox" key={team.team.shortDisplayName}>
         <span className="teamnamebox">{team.team.shortDisplayName}</span>
@@ -16,11 +16,12 @@ function AFC({teamData}){
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
+    else return null
 })
 
 const afcNorthFilter = sortData.map(team=>{
-    if(team.team.conference == "AFC"){
-        if(team.team.division =="north")
+    if(team.team.conference === "AFC"){
+        if(team.team.division ==="north")
     
     return(
         <div className="standingbox" key={team.team.shortDisplayName}>
@@ -29,10 +30,12 @@ const afcNorthFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 const afcSouthFilter = sortData.map(team=>{
-    if(team.team.conference == "AFC"){
-        if(team.team.division =="south")
+    if(team.team.conference === "AFC"){
+        if(team.team.division ==="south")
     
     return(
         <div className="standingbox" key={team.team.shortDisplayName}>
@@ -41,10 +44,12 @@ const afcSouthFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 const afcEastFilter = sortData.map(team=>{
-    if(team.team.conference == "AFC"){
-        if(team.team.division =="east")
+    if(team.team.conference === "AFC"){
+        if(team.team.division ==="east")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -53,10 +58,12 @@ const afcEastFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 const afcWestFilter = sortData.map(team=>{
-    if(team.team.conference == "AFC"){
-        if(team.team.division =="west")
+    if(team.team.conference === "AFC"){
+        if(team.team.division ==="west")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -64,8 +71,10 @@ const afcWestFilter = sortData.map(team=>{
         <span className="winbox">{team.team.wins}</span>
         <span className="losebox">{team.team.losses}</span>
         </div>
-    )  
-}})
+    ) 
+    else return null 
+}else return null
+})
 
 
     return(

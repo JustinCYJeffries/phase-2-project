@@ -12,7 +12,7 @@ function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter,
 
     
     const foundHomeTeam = teamData.map(element => {
-        if (element.team.abbreviation == homeTeam)
+        if (element.team.abbreviation === homeTeam)
         homeElement = element.team
         return(
             element.team.displayName
@@ -20,20 +20,20 @@ function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter,
     });
     
     const foundAwayTeam = teamData.map(element => {
-        if (element.team.abbreviation == awayTeam){
+        if (element.team.abbreviation === awayTeam){
             awayElement = element.team
             return(
             element.team.displayName
             
-        )}
+        )}else return null
     });
 
-
+  
 
 
     return(
-        <div className='box'>
-            <h3 className="teampickemboxes">{awayElement.displayName} @ {homeElement.displayName}</h3>
+        <div className='box' key={foundAwayTeam}>
+            <h3 className="teampickemboxes" key={foundHomeTeam}>{awayElement.displayName} @ {homeElement.displayName}</h3>
             <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam} boxKey={boxKey} pickedFilter={pickedFilter} handleFilter={handleFilter} selectedWeek={selectedWeek}/>
             
         </div>

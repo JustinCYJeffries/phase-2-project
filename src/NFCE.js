@@ -11,8 +11,8 @@ const [selectedTeam, setSelectedTeam] = useState("bananas")
 
 
  const nfcEastFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="east")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="east")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName} onClick={(e)=>teamClick(e)} value={team.team}>
@@ -20,12 +20,15 @@ const [selectedTeam, setSelectedTeam] = useState("bananas")
         <span className="winbox">{team.team.wins}</span>
         <span className="losebox">{team.team.losses}</span>
         </div>
-    )  
-}})
+    ) 
+    else return null 
+}else return null
+})
 function teamClick(e){
     sortData.map(team=>{
         if(team.team.shortDisplayName ===e.target.innerText)
         return(setSelectedTeam(team))
+        else return null
     
 })   
 }

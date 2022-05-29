@@ -11,10 +11,9 @@ function TeamCard({team}){
             return()=>openInNewTab(url)
         }
         
-    if(team!="bananas"){
-        const clubhouseLink = team.team.links[0].href
+    if(team!=="bananas"){
         return(<div>
-            <div className="teamcard"><img src={`${team.team.logos[0].href}`} className="cardlogohandler"/></div>
+            <div className="teamcard"><img src={`${team.team.logos[0].href}`} alt={team.team.color} className="cardlogohandler"/></div>
             <div className="teamcard">
                 <h2>{team.team.displayName}</h2>
                 <span onClick={onClickUrl(`${team.team.links[0].href}`)}style={{"color":`#${team.team.color}`, "fontWeight":"900"}}>Clubhouse</span>&nbsp;&nbsp;&nbsp;&nbsp;

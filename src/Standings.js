@@ -11,6 +11,7 @@ import NFCE from "./NFCE"
 import NFCW from "./NFCW"
 import NFL from "./NFL"
 import "./Standings.css"
+import Users from "./Users"
 
 import {
     BrowserRouter as Router,
@@ -19,7 +20,7 @@ import {
     Routes
   } from "react-router-dom";
 
-   function Standings({teamData}) {
+   function Standings({teamData, userList}) {
     return (
       <Router>
         <div>
@@ -63,6 +64,9 @@ import {
                     </li>
                 </ul>
               </li>
+              <li>
+                <Link to="/users">Users</Link>
+              </li>
             </ul>
           </nav>
         
@@ -81,7 +85,7 @@ import {
             <Route path="/NFCS" element={<NFCS teamData={teamData}/>} />
             <Route path="/NFCE" element={<NFCE teamData={teamData}/>} />
             <Route path="/NFCW" element={<NFCW teamData={teamData}/>} />
-            
+            <Route path="/users" element={<Users userList={userList}/>} />
             <Route path="/" element={<NFL teamData={teamData}/>} />
               
             

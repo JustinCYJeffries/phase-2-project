@@ -129,3 +129,19 @@ select{
   height:150px;
   width: 150px;
 }
+.predictboxwin{
+  display:inline-block;
+  color:blue;
+  font-weight:900;
+  
+}
+.predictcontainer{
+  border-style: ridge;
+  display:inline-block;
+  width:500px;
+  vertical-align: top;
+}
+.predictboxloss{
+  color:rgb(95, 2, 2);
+  font-weight:900;
+}

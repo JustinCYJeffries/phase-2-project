@@ -12,40 +12,45 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
 
     
     const foundHomeTeam = teamData.map(element => {
-        if (element.team.abbreviation == homeTeam)
+        if (element.team.abbreviation === homeTeam){
         homeElement = element.team
         return(
             element.team.displayName
         )
-    });
+        
+    }else return null
+    
+});
     
     const foundAwayTeam = teamData.map(element => {
-        if (element.team.abbreviation == awayTeam){
+        if (element.team.abbreviation === awayTeam){
             awayElement = element.team
             return(
             element.team.displayName
             
-        )}
+        )
+        
+    }else return null
     });
     
     const foundwinteam = winTeam.map(winner =>{
       
-        if(winner == homeTeam){
+        if(winner === homeTeam){
         return(
             <div  key={homeElement.displayName}>
-                <img src={`${homeElement.logos[0].href}`} key={homeElement.displayName} className='logohandler' />
+                <img src={`${homeElement.logos[0].href}`} alt={foundHomeTeam} key={homeElement.displayName} className='logohandler' />
                 <p className="displayname"> {homeElement.displayName} Picked</p>
             </div>
         )}
             
            
-            if (winner==awayTeam){
+            if (winner===awayTeam){
                 return(
                     <div  key={awayElement.displayName}>
-                        <img src={`${awayElement.logos[0].href}`} key={awayElement.displayName} className='logohandler' />
+                        <img src={`${awayElement.logos[0].href}`} alt={foundAwayTeam} key={awayElement.displayName} className='logohandler' />
                         <p className="displayname">{awayElement.displayName} Picked</p>
                     </div>
-                )}
+                )}else return null
                
         
        

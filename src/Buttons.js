@@ -9,7 +9,7 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
   const [picked, setPicked] = useState(false)
   const [winName, setWinName] = useState("")
  
-    let escalator = 0
+   
   useEffect(()=> {
     
       
@@ -28,7 +28,7 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
    const ht=e.target.attributes.hometeam.value
    const at=e.target.attributes.awayteam.value
    const wt=e.target.attributes.winnamez.value
-   escalator++
+ 
    const pickedkey = [{boxKey}]
    const pickedWeek = [{selectedWeek}]
       const pickedWin = [{winner}]
@@ -42,13 +42,13 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
    
 }
 function homeLogo(){
-  if (homeElement.logos != undefined){
-    return( <img onClick={e=>partyClick(e)}value={homeElement.abbreviation} winner={homeElement.abbreviation} loser={awayElement.abbreviation}  winnamez={homeElement.shortDisplayName} week={selectedWeek} src={`${homeElement.logos[0].href}`} key={homeElement.displayName} className='logohandler' awayteam={awayElement.displayName} hometeam={homeElement.displayName}/>)
+  if (homeElement.logos !== undefined){
+    return( <img onClick={e=>partyClick(e)}value={homeElement.abbreviation} alt={homeElement.abbreviation} winner={homeElement.abbreviation} loser={awayElement.abbreviation}  winnamez={homeElement.shortDisplayName} week={selectedWeek} src={`${homeElement.logos[0].href}`} key={homeElement.displayName} className='logohandler' awayteam={awayElement.displayName} hometeam={homeElement.displayName}/>)
   }
 }
 function awayLogo(){
-  if (awayElement.logos != undefined){
-    return( <img onClick={e=>partyClick(e)} value={awayElement.abbreviation} winner={awayElement.abbreviation} loser={homeElement.abbreviation} winnamez={awayElement.shortDisplayName} week={selectedWeek} src={`${awayElement.logos[0].href}`} key={awayElement.displayName} className='logohandler' awayteam={awayElement.displayName} hometeam={homeElement.displayName}/>)
+  if (awayElement.logos !== undefined){
+    return( <img onClick={e=>partyClick(e)} value={awayElement.abbreviation} alt={awayElement.abbreviation} winner={awayElement.abbreviation} loser={homeElement.abbreviation} winnamez={awayElement.shortDisplayName} week={selectedWeek} src={`${awayElement.logos[0].href}`} key={awayElement.displayName} className='logohandler' awayteam={awayElement.displayName} hometeam={homeElement.displayName}/>)
   }
 }
 
@@ -56,7 +56,7 @@ function awayLogo(){
 
  
   function picking(){
-    if(picked==false){
+    if(picked===false){
       return(
       <div>
         {awayLogo()}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{homeLogo()}

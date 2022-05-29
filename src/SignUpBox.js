@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import GameBox from "./GameBox";
+import Header from "./Header";
 
 
-function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleClick, winTeam, handlePickedData, userList}){
+function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleClick, winTeam, handlePickedData, userList, handleWeek}){
     const [formData, setFormData] = useState({
         name: "",
         picks:[] 
@@ -16,7 +17,7 @@ function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleC
       }
       function handleSubmit(e) {
         e.preventDefault()
-        const indexcalc = userList.length
+        
         const newUser = {
            
           "name": formData.name,
@@ -43,9 +44,9 @@ function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleC
 
 
       function render(){
-          if(submitted==true){
-          return(<div>
-            <h2>Add Your User Name</h2>
+          if(submitted===true){
+          return(<div className='text_center'>
+            <h2>Add Your User Name To Begin</h2>
             <form onSubmit={(e)=>handleSubmit(e)}>
                 
                   <input type="text"
@@ -59,8 +60,11 @@ function SignUpBox({addUser, selectedWeeksGames, selectedWeek, teamData, handleC
                   
                   <button type="submit">Submit</button>
               </form>
+              <br/><br/><br/>
         </div>)}
-        else return(<GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam} handlePickedData={handlePickedData}/>)
+        else return(<div><Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
+          <GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam} handlePickedData={handlePickedData}/>
+        </div>)
       }
 
       return(render())

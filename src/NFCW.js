@@ -10,8 +10,8 @@ function NFCW({teamData}){
     const [selectedTeam, setSelectedTeam] = useState("bananas")
     
  const nfcWestFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="west")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="west")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName} onClick={(e)=>teamClick(e)} value={team.team}>
@@ -20,11 +20,14 @@ function NFCW({teamData}){
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 function teamClick(e){
     sortData.map(team=>{
         if(team.team.shortDisplayName ===e.target.innerText)
         return(setSelectedTeam(team))
+        else return null
     
 })   
 }

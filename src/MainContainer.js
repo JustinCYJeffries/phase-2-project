@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react"
-import Header from './Header'
-import GameBox from './GameBox'
 import Standings from './Standings'
 import SignUpBox from './SignUpBox'
 
@@ -9,10 +7,10 @@ function MainContainer() {
   const [selectedWeek, setSelectedWeek] = useState(1)
   const [selectedWeeksGames, setSelectedWeekGames] = useState([])
   const [teamData, setTeamData] = useState([])
-  const [winTeam, setWinTeam] = useState(" ")
-  const [loseTeam, setLoseTeam] = useState([])
+  
+
   const [userList, setUserList] = useState([])
-  const [currentUser, setCurrentUser]= useState([])
+  
   
   
   
@@ -46,11 +44,10 @@ function MainContainer() {
 
 function handlePickedData(pickedData){
   const dataIndex=userList.length
-  const putIndex=dataIndex -1
   const pickey = userList.map(user=>{
     
     
-    if (dataIndex== user.id){  
+    if (dataIndex=== user.id){  
       user.picks = pickedData
       fetch(`http://localhost:3000/user/${dataIndex}`, {
         method: "PUT",
@@ -81,7 +78,7 @@ function handlePickedData(pickedData){
 
   function handleAddUser(newUser){
    
-   setCurrentUser(newUser)
+  
    setUserList(userList.concat(newUser))
 
   }
@@ -93,10 +90,7 @@ function handlePickedData(pickedData){
   }, []);
 
 
-function validate(){
-  if(selectedWeeksGames != [])
-  return (<GameBox selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>)
-}
+
 
  function handleClick(e){
   let winTeam =  e.target.attributes.winner.value
@@ -105,7 +99,7 @@ function validate(){
     const winnerWinner = () =>{
       
       const winningTeam = teamData.map(element =>{
-            if(element.team.abbreviation == winTeam){
+            if(element.team.abbreviation === winTeam){
                element.team.wins++
                 
             return ({ ...element})
@@ -119,7 +113,7 @@ function validate(){
     }
     const loserLoser = () =>{
         const loserTeam = teamData.map(element =>{
-            if(element.team.abbreviation == loser){
+            if(element.team.abbreviation === loser){
                element.team.losses++
 
             return ({ ...element})
@@ -157,9 +151,9 @@ function validate(){
 
   return (
     <div>
-    {console.log(userList)}
-    <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    <SignUpBox handlePickedData={handlePickedData} userList={userList} addUser={handleAddUser}selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>
+    
+    
+    <SignUpBox handlePickedData={handlePickedData} userList={userList} addUser={handleAddUser}selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} handleWeek={handleWeek}/>
     <Standings teamData={teamData} userList={userList}/>
     </div>
   );

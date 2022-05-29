@@ -9,8 +9,8 @@ function AFCN({teamData}){
  
     const [selectedTeam, setSelectedTeam] = useState("bananas")
  const afcNorthFilter = sortData.map(team=>{
-    if(team.team.conference == "AFC"){
-        if(team.team.division =="north")
+    if(team.team.conference === "AFC"){
+        if(team.team.division ==="north")
     
     return(
         <div className="standingbox" key={team.team.shortDisplayName} onClick={(e)=>teamClick(e)} value={team.team}>
@@ -18,14 +18,15 @@ function AFCN({teamData}){
         <span className="winbox">{team.team.wins}</span>
         <span className="losebox">{team.team.losses}</span>
         </div>
-    )  
-}})
+    ) 
+    else return null
+}else return null} )
 
 function teamClick(e){
     sortData.map(team=>{
         if(team.team.shortDisplayName ===e.target.innerText)
         return(setSelectedTeam(team))
-    
+        else return null
 })   
 }
 

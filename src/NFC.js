@@ -7,7 +7,7 @@ function NFC({teamData}){
     const sortData= presortData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
  
  const nfcFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC")
+    if(team.team.conference === "NFC")
     return(
         <div className="standingbox" key={team.team.shortDisplayName}>
         <span className="teamnamebox">{team.team.shortDisplayName}</span>
@@ -15,10 +15,12 @@ function NFC({teamData}){
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-})
+    else return null
+}
+)
 const nfcNorthFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="north")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="north")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -27,10 +29,12 @@ const nfcNorthFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 const nfcSouthFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="south")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="south")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -38,11 +42,13 @@ const nfcSouthFilter = sortData.map(team=>{
         <span className="winbox">{team.team.wins}</span>
         <span className="losebox">{team.team.losses}</span>
         </div>
-    )  
-}})
+    )
+      else return null
+}else return null
+})
 const nfcEastFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="east")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="east")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -51,10 +57,12 @@ const nfcEastFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 const nfcWestFilter = sortData.map(team=>{
-    if(team.team.conference == "NFC"){
-        if(team.team.division =="west")
+    if(team.team.conference === "NFC"){
+        if(team.team.division ==="west")
     
     return(
         <div className="standingbox"key={team.team.shortDisplayName}>
@@ -63,7 +71,9 @@ const nfcWestFilter = sortData.map(team=>{
         <span className="losebox">{team.team.losses}</span>
         </div>
     )  
-}})
+    else return null
+}else return null
+})
 
 
     return(
