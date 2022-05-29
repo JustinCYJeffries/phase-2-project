@@ -40,6 +40,11 @@ div.box{
   border-style: ridge;
   display: inline-block;
   padding:4px;
+  background-color: white;
+  height: 175px;
+  width:400px;
+  vertical-align: top;
+
 }
 .text_center{
   text-align: center;
@@ -90,4 +95,22 @@ select{
 .standingsdisplaybox{
   justify-content: center;
   display:flex;
+}
+.footballfieldbackground{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/AmFBfield.svg/1200px-AmFBfield.svg.png");
+  background-size: cover;
+  text-align: center;
+}
+.teampickemboxes{
+ 
+  text-align: center;
+}
+.logohandler{
+  height:50px;
+  width: 50px;
+}
+.displayname{
+  
+  
+  font-weight:900;
 }

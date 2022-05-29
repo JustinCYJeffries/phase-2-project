@@ -46,10 +46,10 @@ function Gamebox({selectedWeeksGames, selectedWeek, teamData, handleClick, winTe
 function pickem(){
   
     return(
-<div className="text_center">
+<div className="footballfieldbackground"><br/><br/><br/><div >
             {unPickedGames.map(game=> <PickemBox key={`${selectedWeek}`+`${game.team[0].id}`+`${game.team[1].id}`} boxKey={selectedWeeksGames.indexOf(game)} teams={game.team} teamData={teamData} handleClick={handleClick} winTeam={winTeam} handleFilter={handleFilter} selectedWeek={selectedWeek}/>)}
             {generatePickedGames.map(game=> <PickedGame key={`${selectedWeek}`+`${game.team[0].id}`+`${game.team[1].id}`} boxKey={selectedWeeksGames.indexOf(game)} teams={game.team} teamData={teamData} handleClick={handleClick} winTeam={winArray} handleFilter={handleFilter} selectedWeek={selectedWeek}/>)}          
-        </div>
+        </div><br/><br/><br/></div>
     )
 
 }

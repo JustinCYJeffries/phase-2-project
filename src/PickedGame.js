@@ -31,11 +31,21 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
     const foundwinteam = winTeam.map(winner =>{
       
         if(winner == homeTeam){
-        return(homeElement.displayName)}
+        return(
+            <div  key={homeElement.displayName}>
+                <img src={`${homeElement.logos[0].href}`} key={homeElement.displayName} className='logohandler' />
+                <p className="displayname"> {homeElement.displayName} Picked</p>
+            </div>
+        )}
             
            
             if (winner==awayTeam){
-            return (awayElement.displayName)}
+                return(
+                    <div  key={awayElement.displayName}>
+                        <img src={`${awayElement.logos[0].href}`} key={awayElement.displayName} className='logohandler' />
+                        <p className="displayname">{awayElement.displayName} Picked</p>
+                    </div>
+                )}
                
         
        
@@ -47,7 +57,7 @@ function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleF
         <div className='box'>
             <h3 className='text_center'>{awayElement.displayName} @ {homeElement.displayName}</h3>
             <div>
-      <h3>{foundwinteam} WIN!!</h3>
+      {foundwinteam}
     </div>
         </div>
     )

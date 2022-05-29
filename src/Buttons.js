@@ -41,6 +41,7 @@ function Buttons({homeElement, awayElement, teamData, handleClick, boxKey, picke
       return(
         <div>
       <button onClick={e=>partyClick(e)} value={awayElement.abbreviation} winner={awayElement.abbreviation} loser={homeElement.abbreviation} winnamez={awayElement.shortDisplayName} week={selectedWeek}>{awayElement.shortDisplayName} Win</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <button onClick={e=>partyClick(e)}value={homeElement.abbreviation} winner={homeElement.abbreviation} loser={awayElement.abbreviation}  winnamez={homeElement.shortDisplayName} week={selectedWeek}>{homeElement.shortDisplayName} Win</button>
     </div>
       )
