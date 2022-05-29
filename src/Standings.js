@@ -42,7 +42,7 @@ import {
                     <Link to="/AFCE">AFC East</Link>
                     </li>
                     <li>
-                    <Link to="/AFCN">AFC West</Link>
+                    <Link to="/AFCW">AFC West</Link>
                     </li>
                 </ul>
               </li>
@@ -59,7 +59,7 @@ import {
                     <Link to="/NFCE">NFC East</Link>
                     </li>
                     <li>
-                    <Link to="/NFCN">NFC West</Link>
+                    <Link to="/NFCW">NFC West</Link>
                     </li>
                 </ul>
               </li>

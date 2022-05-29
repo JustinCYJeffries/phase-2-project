@@ -39,7 +39,7 @@ function teamClick(e){
                 <span className="winbox">Wins</span>
                 <span className="losebox">Losses</span>
             </div>
-            {afcEastFilter}
+            {afcEastFilter}<br/><br/><br/><br/>
         </div>
             <div className="teamcard"><TeamCard team={selectedTeam}/></div>
         </div>
