@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import Header from './Header'
 import GameBox from './GameBox'
 import Standings from './Standings'
+import SignUpBox from './SignUpBox'
 
 
 function MainContainer() {
@@ -10,7 +11,10 @@ function MainContainer() {
   const [teamData, setTeamData] = useState([])
   const [winTeam, setWinTeam] = useState(" ")
   const [loseTeam, setLoseTeam] = useState([])
- 
+  const [userList, setUserList] = useState([])
+  const [currentUser, setCurrentUser]= useState([])
+  
+  
   
   const fetchWeekData = () => {
     fetch(`https://api.myfantasyleague.com/fflnetdynamic2022/nfl_sched_${selectedWeek}.json`)
@@ -39,6 +43,55 @@ function MainContainer() {
         
       });
   };
+
+function handlePickedData(pickedData){
+  const dataIndex=userList.length
+  const putIndex=dataIndex -1
+  const pickey = userList.map(user=>{
+    
+    
+    if (dataIndex== user.id){  
+      user.picks = pickedData
+      fetch(`http://localhost:3000/user/${dataIndex}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+         name:user.name,
+          picks:pickedData}),
+      })
+    
+      return user
+  }
+  else return user}
+  )
+  
+    setUserList(pickey)
+   
+  }
+  useEffect(()=>{
+    
+          
+          
+  }, [handlePickedData])
+  
+  
+
+
+  function handleAddUser(newUser){
+   
+   setCurrentUser(newUser)
+   setUserList(userList.concat(newUser))
+
+  }
+ 
+  useEffect(() => {
+    fetch("http://localhost:3000/user")
+      .then((r) => r.json())
+      .then((r)=>setUserList(r));
+  }, []);
+
 
 function validate(){
   if(selectedWeeksGames != [])
@@ -104,10 +157,10 @@ function validate(){
 
   return (
     <div>
-    
+    {console.log(userList)}
     <Header selectedWeek={selectedWeek}  handleWeek={handleWeek}/>
-    {validate()}
-    <Standings teamData={teamData}/>
+    <SignUpBox handlePickedData={handlePickedData} userList={userList} addUser={handleAddUser}selectedWeeksGames={selectedWeeksGames} selectedWeek={selectedWeek} teamData={teamData}  handleClick={handleClick} winTeam={winTeam}/>
+    <Standings teamData={teamData} userList={userList}/>
     </div>
   );
 }
