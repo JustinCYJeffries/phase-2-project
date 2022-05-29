@@ -125,7 +125,7 @@ function NFL({teamData}){
 
     return(
         <div>
-            <div>
+            <div className="conferenceboxpad">
            
             <div>
                 <span className="titlebox">AFC Standings</span>
@@ -134,7 +134,7 @@ function NFL({teamData}){
                 </div>
             {afcFilter}
             </div>
-            <div>
+            <div className="conferencebox">
             <div>
                 <span className="titlebox">NFC Standings</span>
                 <span className="winbox">Wins</span>
@@ -142,6 +142,7 @@ function NFL({teamData}){
                 </div>
             {nfcFilter}
             </div>
+            <div className="conferenceboxpad">
             <div>
             <div>
                 <span className="titlebox">AFC North Standings</span>
@@ -174,6 +175,8 @@ function NFL({teamData}){
                 </div>
                 {afcWestFilter}
             </div>
+            </div>
+            <div className="conferencebox">
             <div>
             <div>
                 <span className="titlebox">NFC North Standings</span>
@@ -205,6 +208,7 @@ function NFL({teamData}){
                 <span className="losebox">Losses</span>
                 </div>
                 {nfcWestFilter}
+            </div>
             </div>
         </div>
     )

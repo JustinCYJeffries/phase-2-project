@@ -20,11 +20,14 @@ function AFCE({teamData}){
     return(
         <div>
         <div>
+        <div>
             <span className="titlebox">AFC East Standings</span>
             <span className="winbox">Wins</span>
             <span className="losebox">Losses</span>
             </div>
             {afcEastFilter}
+        </div>
+        <br/><br/><br/><br/>
         </div>
     )
 }

@@ -68,8 +68,8 @@ const afcWestFilter = sortData.map(team=>{
 
 
     return(
-        <div>
-            <div>
+        <div className="standingdisplaybox">
+            <div className="conferenceboxpad">
            
            <div>
                <span className="titlebox">AFC Standings</span>
@@ -78,7 +78,7 @@ const afcWestFilter = sortData.map(team=>{
                </div>
            {afcFilter}
            </div>
-         
+         <div className="conferenceboxpad">
            <div>
            <div>
                <span className="titlebox">AFC North Standings</span>
@@ -95,6 +95,8 @@ const afcWestFilter = sortData.map(team=>{
                </div>
                {afcSouthFilter}
            </div>
+           </div>
+           <div className="conferenceboxpad">
            <div>
            <div>
                <span className="titlebox">AFC East Standings</span>
@@ -111,7 +113,7 @@ const afcWestFilter = sortData.map(team=>{
                </div>
                {afcWestFilter}
            </div>
-           
+           </div>
         </div>
     )
 }

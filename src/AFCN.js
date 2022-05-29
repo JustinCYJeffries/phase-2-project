@@ -21,11 +21,14 @@ function AFCN({teamData}){
     return(
         <div>
             <div>
+            <div>
                 <span className="titlebox">AFC North Standings</span>
                 <span className="winbox">Wins</span>
                 <span className="losebox">Losses</span>
                 </div>
                 {afcNorthFilter}
+            </div>
+            <br/><br/><br/><br/>
             </div>
     )
 }

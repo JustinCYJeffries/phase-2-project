@@ -20,12 +20,13 @@ function NFCS({teamData}){
 
     return(
         <div>
-        <div>
+        <div><div>
             <span className="titlebox">NFC South Standings</span>
             <span className="winbox">Wins</span>
             <span className="losebox">Losses</span>
             </div>
             {nfcSouthFilter}
+        </div><br/><br/><br/><br/>
         </div>
     )
 }

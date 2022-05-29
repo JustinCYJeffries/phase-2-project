@@ -19,14 +19,15 @@ function NFCW({teamData}){
 
 
     return(
-        <div>
+        <div><div>
             <div>
                 <span className="titlebox">NFC West Standings</span>
                 <span className="winbox">Wins</span>
                 <span className="losebox">Losses</span>
                 </div>
                 {nfcWestFilter}
-            </div>
+            </div><br/><br/><br/><br/>
+        </div>
     )
 }
 

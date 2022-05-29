@@ -67,7 +67,7 @@ const nfcWestFilter = sortData.map(team=>{
 
     return(
         <div>
-        <div>
+        <div className="conferenceboxpad">
         <div>
             <span className="titlebox">NFC Standings</span>
             <span className="winbox">Wins</span>
@@ -75,6 +75,7 @@ const nfcWestFilter = sortData.map(team=>{
             </div>
         {nfcFilter}
         </div>
+        <div className="conferenceboxpad">
         <div>
             <div>
                 <span className="titlebox">NFC North Standings</span>
@@ -91,6 +92,8 @@ const nfcWestFilter = sortData.map(team=>{
                 </div>
                 {nfcSouthFilter}
             </div>
+            </div>
+            <div className="conferenceboxpad">
             <div>
             <div>
                 <span className="titlebox">NFC East Standings</span>
@@ -106,6 +109,7 @@ const nfcWestFilter = sortData.map(team=>{
                 <span className="losebox">Losses</span>
                 </div>
                 {nfcWestFilter}
+            </div>
             </div>
         </div>
     )

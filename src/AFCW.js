@@ -21,12 +21,13 @@ function AFCW({teamData}){
 
     return(
         <div>
-        <div>
+        <div><div>
             <span className="titlebox">AFC West Standings</span>
             <span className="winbox">Wins</span>
             <span className="losebox">Losses</span>
             </div>
             {afcWestFilter}
+        </div><br/><br/><br/><br/>
         </div>
     )
 }

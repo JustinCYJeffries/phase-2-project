@@ -20,13 +20,14 @@ function AFCS({teamData}){
 
     return(
         <div>
-        <div>
+        <div><div>
                 <span className="titlebox">AFC South Standings</span>
                 <span className="winbox">Wins</span>
                 <span className="losebox">Losses</span>
                 </div>
                 {afcSouthFilter}
-            </div>
+            </div><br/><br/><br/><br/>
+        </div>
     )
 }
 
