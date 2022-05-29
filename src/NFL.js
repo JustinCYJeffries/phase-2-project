@@ -8,20 +8,20 @@ function NFL({teamData}){
        
         if(team.team.conference == "AFC")
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox" key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     })
     const nfcFilter = sortData.map(team=>{
         if(team.team.conference == "NFC")
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox" key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     })
@@ -30,10 +30,10 @@ function NFL({teamData}){
             if(team.team.division =="north")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox" key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -42,10 +42,10 @@ function NFL({teamData}){
             if(team.team.division =="south")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox" key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -54,10 +54,10 @@ function NFL({teamData}){
             if(team.team.division =="east")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -66,10 +66,10 @@ function NFL({teamData}){
             if(team.team.division =="west")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -78,10 +78,10 @@ function NFL({teamData}){
             if(team.team.division =="north")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -90,10 +90,10 @@ function NFL({teamData}){
             if(team.team.division =="south")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -102,10 +102,10 @@ function NFL({teamData}){
             if(team.team.division =="east")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -114,10 +114,10 @@ function NFL({teamData}){
             if(team.team.division =="west")
         
         return(
-            <div key={team.team.shortDisplayName}>
-            <span>{team.team.shortDisplayName}</span>
-            <span>{team.team.wins}</span>
-            <span>{team.team.losses}</span>
+            <div className="standingbox"key={team.team.shortDisplayName}>
+            <span className="teamnamebox">{team.team.shortDisplayName}</span>
+            <span className="winbox">{team.team.wins}</span>
+            <span className="losebox">{team.team.losses}</span>
             </div>
         )  
     }})
@@ -126,43 +126,84 @@ function NFL({teamData}){
     return(
         <div>
             <div>
-            <h3>AFC Playoffs</h3>
+           
+            <div>
+                <span className="titlebox">AFC Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
             {afcFilter}
             </div>
             <div>
-            <h3>NFC Playoffs</h3>
+            <div>
+                <span className="titlebox">NFC Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
             {nfcFilter}
             </div>
             <div>
-                <h3>AFC North</h3>
+            <div>
+                <span className="titlebox">AFC North Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {afcNorthFilter}
             </div>
             <div>
-                <h3>AFC South</h3>
+            <div>
+                <span className="titlebox">AFC South Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {afcSouthFilter}
             </div>
             <div>
-                <h3>AFC East</h3>
+            <div>
+                <span className="titlebox">AFC East Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {afcEastFilter}
             </div>
             <div>
-                <h3>AFC West</h3>
+            <div>
+                <span className="titlebox">AFC West Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {afcWestFilter}
             </div>
             <div>
-                <h3>NFC North</h3>
+            <div>
+                <span className="titlebox">NFC North Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {nfcNorthFilter}
             </div>
             <div>
-                <h3>NFC South</h3>
+            <div>
+                <span className="titlebox">NFC South Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {nfcSouthFilter}
             </div>
             <div>
-                <h3>NFC East</h3>
+            <div>
+                <span className="titlebox">NFC East Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {nfcEastFilter}
             </div>
             <div>
-                <h3>NFC West</h3>
+            <div>
+                <span className="titlebox">NFC West Standings</span>
+                <span className="winbox">Wins</span>
+                <span className="losebox">Losses</span>
+                </div>
                 {nfcWestFilter}
             </div>
         </div>

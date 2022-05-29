@@ -48,3 +48,30 @@ select{
   display:block;
   margin:auto;
 }
+.standingbox{
+  border-style: ridge;
+  display: center;
+  padding:4px;
+  width: 300px;
+}
+.teamnamebox{
+  width:200px;
+  display:inline-block;
+}
+.winbox{
+  width:50px;
+  display:inline-block;
+  color:blue;
+  font-weight:900;
+}
+.losebox{
+  
+  display:inline-block;
+  color:rgb(95, 2, 2);
+  font-weight:900;
+}
+.titlebox{
+  width:200px;
+  display:inline-block;
+  font-weight:900;
+}
