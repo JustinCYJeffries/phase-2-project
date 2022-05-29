@@ -27,13 +27,13 @@ function PickemBox({teams, teamData, handleClick, winTeam, boxKey, pickedFilter,
             
         )}
     });
-    
+
 
 
 
     return(
         <div className='box'>
-            <h3 className="teampickemboxes">{awayElement.displayName} @ {homeElement.displayName}</h3><br/><br/>
+            <h3 className="teampickemboxes">{awayElement.displayName} @ {homeElement.displayName}</h3>
             <Buttons awayElement={awayElement} homeElement={homeElement} teamData={teamData} handleClick={handleClick} winTeam={winTeam} boxKey={boxKey} pickedFilter={pickedFilter} handleFilter={handleFilter} selectedWeek={selectedWeek}/>
             
         </div>

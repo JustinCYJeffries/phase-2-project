@@ -114,3 +114,18 @@ select{
   
   font-weight:900;
 }
+.standingcolumn{
+  vertical-align: top;
+  padding:10px;
+  display:inline-block;
+  width:40%;
+}
+.teamcard{
+  vertical-align: top;
+  padding:10px;
+  display:inline-block;
+}
+.cardlogohandler{
+  height:150px;
+  width: 150px;
+}

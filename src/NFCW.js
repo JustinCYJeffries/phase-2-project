@@ -3,7 +3,9 @@ import React from "react"
 function NFCW({teamData}){
    
   
- const sortData= teamData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
+    const presortData= teamData.sort((a,b) =>(a.team.losses > b.team.losses) ? 1: -1)
+    const sortData= presortData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
+    
  const nfcWestFilter = sortData.map(team=>{
     if(team.team.conference == "NFC"){
         if(team.team.division =="west")
