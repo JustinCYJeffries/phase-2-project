@@ -1,14 +1,17 @@
 import React from "react"
 
-function AFC({teamData}){
+function ConferenceBox({teamData, conference}){
    
   
     const presortData= teamData.sort((a,b) =>(a.team.losses > b.team.losses) ? 1: -1)
     const sortData= presortData.sort((a,b) =>(a.team.wins < b.team.wins) ? 1: -1)
- 
- const afcFilter = sortData.map(team=>{
+
+
+
+
+ const conferenceFinder = sortData.map(team=>{
        
-    if(team.team.conference === "AFC")
+    if(team.team.conference === conference)
     return(
         <div className="standingbox" key={team.team.shortDisplayName}>
         <span className="teamnamebox">{team.team.shortDisplayName}</span>
@@ -19,8 +22,8 @@ function AFC({teamData}){
     else return null
 })
 
-const afcNorthFilter = sortData.map(team=>{
-    if(team.team.conference === "AFC"){
+const northFilter = sortData.map(team=>{
+    if(team.team.conference === conference){
         if(team.team.division ==="north")
     
     return(
@@ -33,8 +36,8 @@ const afcNorthFilter = sortData.map(team=>{
     else return null
 }else return null
 })
-const afcSouthFilter = sortData.map(team=>{
-    if(team.team.conference === "AFC"){
+const southFilter = sortData.map(team=>{
+    if(team.team.conference === conference){
         if(team.team.division ==="south")
     
     return(
@@ -47,8 +50,8 @@ const afcSouthFilter = sortData.map(team=>{
     else return null
 }else return null
 })
-const afcEastFilter = sortData.map(team=>{
-    if(team.team.conference === "AFC"){
+const eastFilter = sortData.map(team=>{
+    if(team.team.conference === conference){
         if(team.team.division ==="east")
     
     return(
@@ -61,8 +64,8 @@ const afcEastFilter = sortData.map(team=>{
     else return null
 }else return null
 })
-const afcWestFilter = sortData.map(team=>{
-    if(team.team.conference === "AFC"){
+const westFilter = sortData.map(team=>{
+    if(team.team.conference === conference){
         if(team.team.division ==="west")
     
     return(
@@ -82,50 +85,50 @@ const afcWestFilter = sortData.map(team=>{
             <div className="conferenceboxpad">
            
            <div>
-               <span className="titlebox">AFC Standings</span>
+               <span className="titlebox">{`${conference} Standings`}</span>
                <span className="winbox">Wins</span>
                <span className="losebox">Losses</span>
                </div>
-           {afcFilter}
+           {conferenceFinder}
            </div>
          <div className="conferenceboxpad">
            <div>
            <div>
-               <span className="titlebox">AFC North Standings</span>
+               <span className="titlebox">{`${conference} North Standings`}</span>
                <span className="winbox">Wins</span>
                <span className="losebox">Losses</span>
                </div>
-               {afcNorthFilter}
+               {northFilter}
            </div>
            <div>
            <div>
-               <span className="titlebox">AFC South Standings</span>
+               <span className="titlebox">{`${conference} South Standings`}</span>
                <span className="winbox">Wins</span>
                <span className="losebox">Losses</span>
                </div>
-               {afcSouthFilter}
+               {southFilter}
            </div>
            </div>
            <div className="conferenceboxpad">
            <div>
            <div>
-               <span className="titlebox">AFC East Standings</span>
+               <span className="titlebox">{`${conference} East Standings`}</span>
                <span className="winbox">Wins</span>
                <span className="losebox">Losses</span>
                </div>
-               {afcEastFilter}
+               {eastFilter}
            </div>
            <div>
            <div>
-               <span className="titlebox">AFC West Standings</span>
+               <span className="titlebox">{`${conference} West Standings`}</span>
                <span className="winbox">Wins</span>
                <span className="losebox">Losses</span>
                </div>
-               {afcWestFilter}
+               {westFilter}
            </div>
            </div>
         </div>
     )
 }
 
-export default AFC
+export default ConferenceBox

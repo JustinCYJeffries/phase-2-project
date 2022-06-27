@@ -11,7 +11,7 @@ function TeamCard({team}){
             return()=>openInNewTab(url)
         }
         
-    if(team!=="bananas"){
+    if(team!==undefined){
         return(<div>
             <div className="teamcard"><img src={`${team.team.logos[0].href}`} alt={team.team.color} className="cardlogohandler"/></div>
             <div className="teamcard">

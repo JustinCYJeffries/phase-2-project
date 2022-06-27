@@ -1,7 +1,7 @@
 import React from "react"
 
 
-function PickedGame({teams, teamData, handleClick, boxKey, pickedFilter, handleFilter, selectedWeek, winTeam}){
+function PickedGame({teams, teamData, winTeam}){
 
     const homeTeam=teams[1].id
     const awayTeam = teams[0].id
